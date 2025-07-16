@@ -1,100 +1,37 @@
-import React, { useState } from 'react';
-import logo from '../assets/main_logo.svg';
-import Button from './Button';
-import Icons from '../assets/Icons';
-import MenuIcon from '../assets/MenuIcon';
+import React from 'react'
+import logo from '../assets/logo.svg'
+import userIcon from '../assets/userIcon.svg'
+
 
 const Navbar = () => {
-  const [isSidebar, setIsSidebar] = useState(false);
-
-  const toggleSidebar = () => {
-    setIsSidebar(!isSidebar);
-  };
-
   return (
-    <>
-      {/* Navbar */}
-      <div
-        role="navigation"
-        aria-label="Main Navigation"
-        className="fixed flex flex-wrap justify-between items-center pl-6 pr-6 w-full"
-      >
-        <div className="flex items-center gap-2 z-50 cursor-pointer" onClick={toggleSidebar}>
-          <MenuIcon open={isSidebar} className="z-50" />
-          <div className="text-white">Menu</div>
-        </div>
+   <>
+   <header id='navbar' className='fixed top-0 w-full bg-transparent z-50'>
+    <div className="nav-glass px-6">
+      <div className="container mx-auto flex item-center justify-center items-center relative py-5 md:py6">
+        <button
+        id='menuToggle' 
+        class="absolute lg:text-4xl md:text-3xl left-6 text-white text-2xl px-2 py-2 rounded shadow-lg hover:bg-gray-200 transition z-50">&#9776;</button>
 
-        <div>
-          <img src={logo} alt="Logo" height={120} width={120} />
-        </div>
+        {/* logo */}
+        <div className="flex items-center space-x-3"> <img src={logo} alt="logo" className='lg:h-20 md:h-12 h-10 w-auto logo-transition'/></div>
 
-        <div className="flex text-white gap-5">
-          <Button
-            text="Location"
-            icon={<Icons className="fill-blue-800" />}
-            className="hover:underline hover:text-blue-900"
-          />
-          <Button
-            text="Review"
-            icon={<Icons className="fill-blue-700" />}
-            className="hover:underline hover:text-blue-900"
-          />
-        </div>
+        {/* nav right */}
+        <nav className='hidden text-white lg:flex gap-8 text-sm uppercase tracking-wide font-medium absolute right-24'>
+          <a href="#hero" className='hover:text-teal-300 transation'>Home</a>
+          <a href="/gallery" className='hover:text-teal-300 transation'>Booking</a>
+          <a href="/hero" className='hover:text-teal-300 transation'>Contact Us</a>
+        </nav>
+        {/*  Login Icon*/}
+        <a href="login.html" class="text-white hover:text-teal-300 transition absolute right-0" aria-label="Login">
+          <img src={userIcon} alt="login" className='lg:h-12 md:h-10 h-8 w-auto logo-transition bg-gradient-to-b from-gray-300 via-gray-400 to-gray-800 border-2 rounded-3xl' />
+          </a>
       </div>
+    </div>
 
-      {/* Overlay */}
-      {isSidebar && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-40 z-30"
-          onClick={toggleSidebar}
-        />
-      )}
+   </header>
+   </>
+  )
+}
 
-      {/* Sidebar */}
-      <div
-        className={`fixed top-0 left-0 h-full w-64 sm:w-72 bg-white shadow-lg rounded-r-lg transform transition-transform duration-300 z-40 ${
-          isSidebar ? 'translate-x-0' : '-translate-x-full'
-        }`}
-      >
-        <div className="p-6">
-          <div className="text-2xl font-bold mb-6">Sidebar Menu</div>
-          <ul className="space-y-4 text-gray-700">
-            {['Home', 'Location', 'Review', 'Contact'].map((item) => (
-              <li
-                key={item}
-                className="hover:text-blue-500 transition-colors duration-200 cursor-pointer"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
-
-          {/* Gallery Section */}
-          <div className="mt-6">
-            <div className="text-lg font-semibold mb-2">Gallery</div>
-            <div className="grid grid-cols-3 gap-2">
-              {['img1.jpg', 'img2.jpg', 'img3.jpg'].map((src, index) => (
-                <img
-                  key={index}
-                  src={src}
-                  alt={`Gallery ${index}`}
-                  className="w-full h-20 object-cover rounded hover:scale-105 transition-transform duration-200"
-                />
-              ))}
-            </div>
-          </div>
-
-          {/* Close Button */}
-          <button
-            onClick={toggleSidebar}
-            className="mt-6 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-all duration-200"
-          >
-            Close
-          </button>
-        </div>
-      </div>
-    </>
-  );
-};
-
-export default Navbar;
+export default Navbar

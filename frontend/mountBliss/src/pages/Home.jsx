@@ -1,16 +1,16 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import hero_img from '../assets/image 1.png'
+import Hero from '../components/Hero'
+
 
 const Home = () => {
   return (
     <>
-    <div>
-        <Navbar/>
-      </div>
-      <img src={hero_img} alt="hero_image" className='w-screen h-screen'/>
-
-      {/* <Booking /> */}
+        <div className="main bg-gradient-to-b from-gray-950 via-black to-gray-900">
+          <Navbar />
+          <Hero text="Discover Mount Bliss" description="An elevated escape nestled in the Himalayan heights."/>
+          </div>
+        
       </>
 
   )

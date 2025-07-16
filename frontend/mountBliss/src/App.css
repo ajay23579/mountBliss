@@ -1,1 +1,63 @@
 @import "tailwindcss";
+
+
+/* Container max-width for consistency */
+.container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Glassmorphism navbar style */
+.navbar-glass {
+  backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.5s ease;
+}
+
+/* Gallery card hover effect */
+.glightbox img {
+  border-radius: 1rem; /* rounded-xl */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s ease;
+  object-fit: cover;
+  height: 16rem; /* h-64 */
+  width: 100%;
+}
+
+.glightbox img:hover {
+  transform: scale(1.05);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scroll-to-top button */
+#scrollTop {
+  transition: opacity 0.3s ease;
+}
+
+/* Form font consistency */
+input, textarea {
+  font-family: inherit;
+}
+/* Transition for smooth height change */
+.logo-transition {
+  transition: height 0.3s ease;
+}
+
+/* Smaller logo style when scrolled */
+.logo-small {
+  height: 40px !important; /* smaller height */
+}
+
+
+/* Selection highlight */
+::selection {
+  background-color: #5eead4;
+  color: black;
+}
+
