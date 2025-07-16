@@ -9,7 +9,10 @@ const Home = () => {
         <Navbar/>
       </div>
       <img src={hero_img} alt="hero_image" className='w-screen h-screen'/>
+
+      {/* <Booking /> */}
       </>
+
   )
 }
 
