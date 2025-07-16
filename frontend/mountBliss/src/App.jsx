@@ -11,11 +11,6 @@ function App() {
     
     <>
       <AppRouter/>
-      <div>
-        <Navabar/>
-      <Home/>
-      <About/>
-      </div>
     </>
   )
 }
