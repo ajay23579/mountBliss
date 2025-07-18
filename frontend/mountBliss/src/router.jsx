@@ -13,6 +13,7 @@ import RoomDetails from './pages/RoomDetails';
 
 const AppRouter = () => {
   return (
+    <div className="main bg-gradient-to-b from-gray-950 via-black to-gray-900">
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -26,6 +27,7 @@ const AppRouter = () => {
         <Route path="/rooms/:id" element={<RoomDetails />} />
       </Routes>
     </Router>
+    </div>
   );
 };
 
