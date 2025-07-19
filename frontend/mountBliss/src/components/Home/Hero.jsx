@@ -1,6 +1,6 @@
 import React from 'react'
-import heroVideo from '../assets/videoplayback.mp4'
-import Button from './Button'
+import heroVideo from '../../assets/videoplayback.mp4'
+import Button from '../Button'
 
 const Hero = (props) => {
   return (
@@ -21,7 +21,7 @@ const Hero = (props) => {
             <p 
             className='text-lg md:text-xl text-gray-300 max-w-3xl"
        '>{props.description}</p>
-       <Button text="Book Now" href="/booking" />
+       <Button text="Book Now" href="/booking" className="mt-8 inline-block px-10 py-3 rounded-full bg-teal-500 text-{#18181B} font-semibold tracking-wide hover:bg-teal-400 transition shadow-lg"/>
         </div>
         </div>
     
