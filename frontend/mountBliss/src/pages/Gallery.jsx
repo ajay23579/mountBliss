@@ -4,9 +4,9 @@
 
 
 import Navbar from '../components/Navbar';
-import image1 from '../assets/gallery/gallery1';
-import image2 from '../assets/gallery/gallery2';
-import image3 from '../assets/gallery/gallery3';
+import image1 from '../assets/gallery/gallery1.jpg';
+import image2 from '../assets/gallery/gallery2.jpg';
+import image3 from '../assets/gallery/gallery3.jpg';
 
 const Gallery = () => {
   
@@ -41,23 +41,15 @@ const Gallery = () => {
     <div>
       <Navbar />
       {/* Gallery Section */}
-      <main className="mt-20 min-h-screen py-16 px-4 md:px-10 max-w-7xl mx-auto">
+      <main className=" min-h-screen py-16 px-4 md:px-10 max-w-7xl mx-auto">
         <h1 style={{ textAlign: 'center' }}>Mount Bliss Gallery</h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {images.map((img, i) => (
-            <a
-              key={i}
-              href={img.src}
-              
-            >
-              <img
-                src={img.thumb}
-                alt={img.title}
-                className="rounded-xl shadow-lg hover:scale-105 transition duration-300 object-cover w-full h-64"
-              />
-            </a>
-          ))}
+         <img src={image1} alt="image1" />
+         <img src={image2} alt="image2" />
+         <img src={image3} alt="image3" />
+
+
         </div>
 
 
