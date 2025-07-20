@@ -3,11 +3,14 @@ import {motion} from "framer-motion";
 
 import logo from '../assets/logo.svg'
 import { Link } from 'react-router-dom';
+import Navbar from "../components/Navbar";
+import Navforlogin from "../components/Navbar/Navfor-login";
 
 const Login=() => {
   motion
   return (
     <>
+    <Navforlogin/>
     <div className='min-h-screen font-[Montserrat] relative overflow-hidden'>
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen">
         {/* Logo */}

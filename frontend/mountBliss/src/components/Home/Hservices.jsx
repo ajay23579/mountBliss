@@ -1,5 +1,7 @@
 import React from 'react'
-import services1 from '../../assets/gallery/gallery1.jpg'
+import services1 from '../../assets/deluxe.jpg'
+import services2 from '../../assets/finedine.jpg'
+import services3 from '../../assets/spa.jpg'
 const Hservices = () => {
   return (
     <>
@@ -14,14 +16,14 @@ const Hservices = () => {
         </div>
       </div>
       <div className="bg-zinc-800 rounded-3xl overflow-hidden shadow-lg hover:shadow-indigo-600 transition-shadow cursor-pointer">
-        <img src={services1} alt="Fine Dining" className="w-full h-48 object-cover" />
+        <img src={services2} alt="Fine Dining" className="w-full h-48 object-cover" />
         <div className="p-6">
           <h3 className="text-2xl font-semibold mb-3">Fine Dining</h3>
           <p className="text-gray-300 leading-relaxed">Gourmet cuisine served in elegant surroundings by top chefs.</p>
         </div>
       </div>
       <div className="bg-zinc-800 rounded-3xl overflow-hidden shadow-lg hover:shadow-indigo-600 transition-shadow cursor-pointer">
-        <img src={services1} alt="Spa & Wellness" className="w-full h-48 object-cover" />
+        <img src={services3} alt="Spa & Wellness" className="w-full h-48 object-cover" />
         <div className="p-6">
           <h3 className="text-2xl font-semibold mb-3">Spa & Wellness</h3>
           <p className="text-gray-300 leading-relaxed">Relaxing treatments and therapies for rejuvenation and well-being.</p>

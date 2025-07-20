@@ -1,6 +1,6 @@
 import React from 'react'
-import intro1 from '../../assets/gallery/gallery1.jpg'
-import intro2 from '../../assets/gallery/gallery2.jpg'
+import intro1 from '../../assets/hotel1.jpg'
+import intro2 from '../../assets/hotel2.jpg'
 const Intro = () => {
   return (
     <>

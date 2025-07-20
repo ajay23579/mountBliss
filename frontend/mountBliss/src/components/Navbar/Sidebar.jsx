@@ -1,34 +1,35 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import gallery1 from '../../assets/gallery/gallery1.jpg'
-import gallery2 from '../../assets/gallery/gallery2.jpg'
-import gallery3 from '../../assets/gallery/gallery3.jpg'
+import home from '../../assets/gallery/gallery2.jpg'
+import finedine from '../../assets/finedine.jpg'
+import acco from '../../assets/executive.jpg'
+import wellness from '../../assets/spa.jpg'
+import gallery from '../../assets/gallery/gallery3.jpg'
+import review from '../../assets/suite.jpg'
+import active from '../../assets/gallery/gallery1.jpg'
 
 const Sidebar = () => {
   const sections = [
     {
       section: "Main Navigation",
       items: [
-        { title: "Home", image: gallery1 },
-        { title: "Fine Dining", image: gallery2 },
-        { title: "Accommodation", image: gallery3 },
-        { title: "Wellness", image: gallery1 },
+        { title: "Home", image: home, link:"/" },
+        { title: "Fine Dining", image: finedine,link:"/dining" },
+        { title: "Accommodation", image: acco, link:"/"},
+        { title: "Wellness", image: wellness, link:"/services"},
       ],
     },
     {
       section: "More Information",
       items: [
-        { title: "Photo Gallery", image: gallery1 },
-        { title: "Rates", image: gallery2 },
-        { title: "Press", image: gallery3 },
-        { title: "Careers", image: gallery1 },
-        { title: "Our CSR Commitments", image: gallery2 },
+        { title: "Photo Gallery", image: gallery,link:"/gallery" },
+        { title: "Review", image: review ,link:"/review"},
       ],
     },
   ]
 
   const [menu, setMenu] = useState(false)
-  const [activeImage, setActiveImage] = useState(gallery1)
+  const [activeImage, setActiveImage] = useState(active)
 
   const menuToggle = () => setMenu(!menu)
 
@@ -59,7 +60,7 @@ const Sidebar = () => {
             >
               <div className="fixed top-0 left-0 w-screen h-screen flex">
                 {/* Left List Section */}
-                <div className="bg-gradient-to-b pt-50 from-gray-950 via-black to-gray-900 w-1/2 h-full text-white overflow-y-auto p-6 space-y-6">
+                <div className="bg-gradient-to-b pt-50 from-gray-950 via-black to-gray-900 w-1/2 h-full text-white overflow-y-auto p-6 space-y-6 text-2xl">
                   {sections.map((section, sectionIndex) => (
                     <div key={sectionIndex}>
                       <h2 className="uppercase font-bold text-gray-400 text-sm mb-2">{section.section}</h2>
@@ -70,7 +71,7 @@ const Sidebar = () => {
                             onMouseEnter={() => setActiveImage(item.image)}
                             className="cursor-pointer hover:text-red-400 transition duration-200"
                           >
-                            {item.title}
+                           <a href={item.link}> {item.title}</a>
                           </li>
                         ))}
                       </ul>

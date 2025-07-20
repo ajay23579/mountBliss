@@ -1,11 +1,13 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+
 import deluxeImg from "../assets/deluxe.jpg";
 import suiteImg from "../assets/suite.jpg";
 import standardImg from "../assets/standard.jpg";
 import familyImg from "../assets/family.jpg";
 import executiveImg from "../assets/executive.jpg";
 
-function Rooms() {
+const Rooms = () => {
   const [selectedRoomId, setSelectedRoomId] = useState(null);
 
   const roomsData = [
@@ -52,25 +54,25 @@ function Rooms() {
   ];
 
   return (
-    <div className="bg-gray-100 text-gray-800 py-12 px-6 font-sans">
-      <h2 className="text-5xl font-bold text-center text-indigo-700 mb-6 font-serif tracking-wide">
+    <div className="min-h-screen bg-gradient-to-b from-gray-950 via-black to-gray-900 text-white font-[Montserrat] py-16 px-6 flex flex-col items-center">
+      <h2 className="text-5xl font-serif font-bold text-center text-[#3BA3A3] mb-6 tracking-wide">
         Rooms at Hotel Mount Bliss
       </h2>
-      <p className="text-center text-gray-600 mb-10 text-lg">
+      <p className="text-center text-gray-400 mb-12 max-w-xl text-lg">
         Browse our beautifully designed rooms and find your perfect stay.
       </p>
 
-      {/* Grid layout with conditional centering */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 w-full max-w-6xl">
         {roomsData.map((room, index) => (
-          <div
+          <motion.div
             key={room.id}
-            className={`bg-white shadow-lg rounded-xl overflow-hidden w-full max-w-sm mx-auto transition hover:scale-105
-              ${index === 4 ? "col-span-2 sm:col-span-2 sm:mx-auto" : ""}
-            `}
+            initial={{ opacity: 0, y: 40, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: index * 0.1 }}
+            className={`bg-[#23272F] rounded-3xl shadow-lg overflow-hidden max-w-sm mx-auto flex flex-col`}
           >
-            {/* Fixed height image box */}
-            <div className="w-full h-[250px] overflow-hidden bg-gray-200 rounded-t-xl">
+            <div className="w-full h-[250px] overflow-hidden rounded-t-3xl">
               <img
                 src={room.image}
                 alt={room.type}
@@ -78,41 +80,41 @@ function Rooms() {
               />
             </div>
 
-            <div className="p-6">
-              <h3 className="text-xl font-serif font-bold text-indigo-700 mb-2 tracking-wide">
+            <div className="p-6 flex flex-col flex-grow">
+              <h3 className="text-2xl font-serif font-semibold text-[#3BA3A3] mb-2 tracking-wide">
                 {room.type}
               </h3>
-              <p className="text-gray-600 mb-2">{room.description}</p>
-              <span className="text-yellow-500 font-semibold text-lg">{room.price}</span>
+              <p className="text-gray-300 mb-2 flex-grow">{room.description}</p>
+              <span className="text-yellow-400 font-semibold text-lg">{room.price}</span>
 
               <div className="mt-6 space-y-4">
                 <button
                   onClick={() =>
                     setSelectedRoomId(selectedRoomId === room.id ? null : room.id)
                   }
-                  className="bg-indigo-500 text-white px-5 py-2 rounded-full font-medium hover:bg-indigo-600 transition duration-200"
+                  className="bg-[#3BA3A3] text-white px-5 py-2 rounded-full font-medium hover:bg-[#2D8C8C] transition duration-200 w-full"
                 >
                   {selectedRoomId === room.id ? "Hide Details" : "View Details"}
                 </button>
 
                 {selectedRoomId === room.id && (
-                  <ul className="text-sm list-disc list-inside text-gray-700 divide-y divide-gray-200 mt-2">
-                    {room.features.map((feature, index) => (
-                      <li key={index} className="py-1">{feature}</li>
+                  <ul className="text-sm list-disc list-inside text-gray-400 divide-y divide-gray-700 mt-2">
+                    {room.features.map((feature, i) => (
+                      <li key={i} className="py-1">{feature}</li>
                     ))}
                   </ul>
                 )}
 
-                <button className="bg-green-600 text-white px-5 py-2 rounded-full font-medium hover:bg-green-700 transition duration-200">
+                <button className="bg-green-600 text-white px-5 py-2 rounded-full font-medium hover:bg-green-700 transition duration-200 w-full">
                   Book Now
                 </button>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
   );
-}
+};
 
 export default Rooms;
