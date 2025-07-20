@@ -7,7 +7,7 @@ const LoginNav = () => {
     const toggleDropdown = () => setShowDropdown(!showDropdown)
   return (
    <>
-        <button className="text-white hover:text-teal-300 transition absolute right-0" aria-label="Login" onClick={toggleDropdown}>
+        <button className="text-white hover:text-teal-300 transition absolute right-10 top-5" aria-label="Login" onClick={toggleDropdown}>
             <img src={userIcon} alt="user" className='lg:h-12 md:h-10 h-8 w-auto logo-transition bg-gradient-to-b from-gray-300 via-gray-400 to-gray-800 border-2 rounded-3xl' />
         </button>
 

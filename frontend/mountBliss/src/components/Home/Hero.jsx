@@ -19,7 +19,7 @@ const Hero = (props) => {
             <h2
             className='text-5xl md:text-7xl font-extrabold tracking-tight leading-tight text-white'>{props.text}</h2>
             <p 
-            className='text-lg md:text-xl text-gray-300 max-w-3xl"
+            className='text-lg md:text-xl text-gray-200  max-w-3xl"
        '>{props.description}</p>
        <Button text="Book Now" href="/booking" className="mt-8 inline-block px-10 py-3 rounded-full bg-teal-500 text-{#18181B} font-semibold tracking-wide hover:bg-teal-400 transition shadow-lg"/>
         </div>

@@ -12,16 +12,29 @@ const Navbar = () => {
   
   return (
    <>
-   <header id='navbar' className='fixed top-0 w-full bg-transparent z-40'>
-    <div className="nav-glass px-6">
-      <div className="container mx-auto flex item-center justify-center items-center relative py-5 md:py6">
-        <Sidebar/>
-        <Logo height={10}/>
-        <RNav/>
-        <LoginNav/>
+    <header id="navbar" className="fixed top-0 w-full bg-transparent z-50">
+      <div className="px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-32">
+        <div className="max-w-[1920px] mx-auto flex items-center justify-between py-4 md:py-6">
+          
+          {/* Left: Sidebar or Nav Toggle */}
+          <Sidebar />
+
+          {/* Center: Logo */}
+          <div className="flex-1 flex justify-center">
+            <Logo height={10} />
+          </div>
+
+          {/* Right: RNav for large screens, Login always visible */}
+          <div className="flex items-center space-x-4">
+            <div className="hidden lg:flex">
+              <RNav />
+            </div>
+            <LoginNav />
+          </div>
+
+        </div>
       </div>
-    </div>
-   </header>
+    </header>
    </>
   )
 }
