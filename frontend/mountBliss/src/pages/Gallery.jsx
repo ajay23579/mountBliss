@@ -1,9 +1,12 @@
-import { useEffect } from 'react';
 
-import AOS from 'aos';
-import GLightbox from 'glightbox';
-import 'aos/dist/aos.css';
-import 'glightbox/dist/css/glightbox.min.css';
+
+
+
+
+import Navbar from '../components/Navbar';
+import image1 from '../assets/gallery/gallery1';
+import image2 from '../assets/gallery/gallery2';
+import image3 from '../assets/gallery/gallery3';
 
 const Gallery = () => {
   
@@ -13,20 +16,20 @@ const Gallery = () => {
   const images = [
 
     {
-      src: '../assets/gallery/gallery1.jpg',
-      thumb: '../assets/gallery/gallery1-thumb.jpg',
+      src:{image1},
+      thumb: {image1},
       title: 'Mountain View',
       description: 'Serene snow-covered peaks under the Himalayan sky.',
     },
     {
-      src: '../assets/gallery/gallery2.jpg',
-      thumb: '../assets/gallery/gallery2-thumb.jpg',
+      src: {image2},
+      thumb: {image2},
       title: 'Cozy Room',
       description: 'Elegant eco-luxury interior with a view.',
     },
     {
-      src: '../assets/gallery/gallery3.jpg',
-      thumb: '../assets/gallery/gallery3-thumb.jpg',
+      src:{image3},
+      thumb: {image3},
       title: 'Dining Area',
       description: 'Fine Himalayan cuisine served with style.',
     },
@@ -36,7 +39,7 @@ const Gallery = () => {
 
   return (
     <div>
-      
+      <Navbar />
       {/* Gallery Section */}
       <main className="mt-20 min-h-screen py-16 px-4 md:px-10 max-w-7xl mx-auto">
         <h1 style={{ textAlign: 'center' }}>Mount Bliss Gallery</h1>
@@ -46,10 +49,7 @@ const Gallery = () => {
             <a
               key={i}
               href={img.src}
-              className="glightbox"
-              data-glightbox={`title: ${img.title}; description: ${img.description}`}
-              data-aos="zoom-in"
-              data-aos-delay={i * 100}
+              
             >
               <img
                 src={img.thumb}

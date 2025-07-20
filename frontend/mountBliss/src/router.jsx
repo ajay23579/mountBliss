@@ -10,12 +10,14 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Rooms from './pages/Rooms';
 import RoomDetails from './pages/RoomDetails';
+import Gallery from './pages/Gallery';
 
 const AppRouter = () => {
   return (
     <div className="main bg-gradient-to-b from-gray-950 via-black to-gray-900">
     <Router>
       <Routes>
+
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
@@ -25,6 +27,7 @@ const AppRouter = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/rooms" element={<Rooms />} />
         <Route path="/rooms/:id" element={<RoomDetails />} />
+       <Route path ="/gallery" element={<Gallery />} />
       </Routes>
     </Router>
     </div>

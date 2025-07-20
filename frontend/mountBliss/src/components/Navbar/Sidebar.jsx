@@ -2,17 +2,17 @@ import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const Sidebar = () => {
-      const [menu,setMenu] = useState(false)
-      const menuToggle = ()=> setMenu(!menu)
-    motion;
+       const [menu,setMenu] = useState(false)
+       const menuToggle = ()=> setMenu(!menu)
+      motion;
     
-  return (
-
-    <>
+       return (
+ 
+         <>
    
         
- {/* Menu Button */}
-        <button onClick={menuToggle} class={`absolute h-10 w-13 left-6  rounded   transition z-50`}>{/* Top line */}
+          {/* Menu Button */}
+         <button onClick={menuToggle} class={`absolute h-10 w-13 left-6  rounded   transition z-50`}>{/* Top line */}
           <span className={`absolute left-6 h-[3px] w-6 transform transition-all duration-300 z-50 ease-in-out hover:w-3 
           ${menu ? 'rotate-45 top-3.5 bg-red-500' : 'bg-white top-2'}`}></span>
           {/* Middle line */}
