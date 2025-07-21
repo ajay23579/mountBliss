@@ -1,7 +1,10 @@
 import Navbar from '../components/Navbar';
 import image1 from '../assets/gallery/gallery1.jpg';
 import image2 from '../assets/gallery/gallery2.jpg';
-import image3 from '../assets/gallery/gallery3.jpg';
+import image3 from '../assets/deluxe.jpg';
+import image4 from '../assets/executive.jpg';
+import image5 from '../assets/family.jpg';
+import image6 from '../assets/gallery/gallery3.jpg';
 
 const Gallery = () => {
   const images = [
@@ -21,17 +24,17 @@ const Gallery = () => {
       description: 'Fine Himalayan cuisine served with style.',
     },
     {
-      src: image1,
+      src: image4,
       title: 'Another Mountain',
       description: 'Nature at its best.',
     },
     {
-      src: image2,
+      src: image5,
       title: 'Comfort Room',
       description: 'Feel the luxury.',
     },
     {
-      src: image3,
+      src: image6,
       title: 'Himalayan Dish',
       description: 'Taste of the mountains.',
     },

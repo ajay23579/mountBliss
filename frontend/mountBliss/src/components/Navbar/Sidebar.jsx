@@ -60,7 +60,7 @@ const Sidebar = () => {
             >
               <div className="fixed top-0 left-0 w-screen h-screen flex">
                 {/* Left List Section */}
-                <div className="bg-gradient-to-b pt-50 from-gray-950 via-black to-gray-900 w-1/2 h-full text-white overflow-y-auto p-6 space-y-6 text-2xl">
+                <div className="bg-gradient-to-b pt-50 from-gray-950 via-black to-gray-900 w-1/2 h-full text-white overflow-y-auto p-6 space-y-6 text-xl">
                   {sections.map((section, sectionIndex) => (
                     <div key={sectionIndex}>
                       <h2 className="uppercase font-bold text-gray-400 text-sm mb-2">{section.section}</h2>
